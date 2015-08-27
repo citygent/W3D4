@@ -27,5 +27,7 @@ elsif line_on != line_off
   puts stops.class
   puts leg1.class
   puts leg2.class
+  puts {mta[station_on]}
+  puts mta[station_off].class # I do not understand this at all.
   puts "Your journey will take "+(leg1.to_s)+" stops to Union Square, where you'll need to change to the "+line_off.to_s+" line, and continue for a further "+(leg2.to_s)+" stops."
 end
