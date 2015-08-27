@@ -1,6 +1,6 @@
 mta = {
   'n': ['times square', '34th', '28th', '23rd', 'union square', '8th'],
-  'l': ['8th', '6th', 'Union Square', '3rd', '1st'],
+  'l': ['8th', '6th', 'union square', '3rd', '1st'],
   '6': ['grand central', '33rd', '28th', '23rd', 'union square', 'astor place']
 }
 
@@ -27,6 +27,10 @@ station_off = gets.chomp.downcase
 
 if line_on == line_off
   stops = (mta[line_on].index(station_on) - mta[line_off].index(station_off)).abs
+elsif line_on != line_off
+  leg1 = (mta[line_on].index(station_on) - mta[line_on].index('union square')).abs
+  leg2 = (mta[line_off].index('union square') - mta[line_off].index(station_off)).abs
+  stops = leg1 + leg2
 end
 
 puts stops
